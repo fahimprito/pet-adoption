@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <title>Peddy</title>
+    <script src="https://kit.fontawesome.com/f199077a1d.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        gray1: '#737373',
+                        primary: '#0E7A81',
+                    },
+                    fontFamily: {
+                        lato: "Lato",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lato">
+    <header>
+        <nav class="container mx-auto py-6">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <!-- menu icon  -->
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li class="text-gray1"><a>Home</a></li>
+                            <li class="text-gray1"><a>Shop</a></li>
+                            <li class="text-gray1"><a>Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- logo -->
+                    <div class="flex gap-1 btn btn-ghost hover:bg-transparent">
+                        <!-- logo icon -->
+                        <div>
+                            <img src="./assets/logo.png" alt="">
+                        </div>
+                        <h2 class="font-bold text-3xl">Peddy</h2>
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-base">
+                        <li class="text-gray1"><a>Home</a></li>
+                        <li class="text-gray1"><a>Shop</a></li>
+                        <li class="text-gray1"><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <div class="btn btn-circle border-[#0e79815d] bg-[#FFFFFF] mr-4">
+                        <i class="fa-regular fa-user  text-[#1313139c]"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- banner  -->
+
+        <div>
+            <div class="hero min-h-[85vh]">
+                <div class="hero-content text-center">
+                    <div class="max-w-screen-xl">
+                        <p class="text-2xl text-gray1 font-bold mb-4">
+                            Bringing Families Together ❤️‍🔥
+                        </p>
+                        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4">Your Path to Adoption <br>Starts
+                            Here</h1>
+                        <p class="text-base py-4 sm:px-5 md:px-10 lg:px-20 mb-4">
+                            Welcome to Peddy — Your new best friend is waiting! Browse through our lovable pets, ready
+                            to bring joy and companionship to your home. Whether you're looking for a playful puppy, a
+                            cuddly kitten, or a calm companion, we have the perfect match. Adopt today and give a
+                            deserving pet a forever home.
+                        </p>
+                        <!-- button  -->
+                        <button onclick="scrollToAdoptSection()" class="btn sm:btn-md max-sm:w-full font-bold text-lg text-white 
+                        bg-primary hover:bg-[#156469] px-6">View More</button>
+
+                        <img class="mx-auto mb-5" src="./assets/pet.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <main class="container mx-auto">
+
+        <!-- Adopt  Your  Best Friend -->
+        <section id="adopt-pet-section" class="py-10 lg:mt-10 px-4">
+            <div class="flex flex-col items-center justify-center gap-4 md:gap-7 mb-14">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-center">Adopt Your Best Friend</h1>
+                <p class="text-base text-center lg:w-7/12">Looking for a loyal companion? At Peddy, we believe every pet
+                    deserves a loving home. Our pets are more than animals – they’re future best friends, ready to bring
+                    love, joy, and loyalty into your life. Explore our list of adoptable pets and find your new furry
+                    family member today!</p>
+            </div>
+
+
+            <div id="categorie-container" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- <button
+                    class="border-2 border-[#0e79815d] p-10 rounded-xl hover:bg-[#0e798121] text-2xl font-bold transform transition-transform duration-150 active:scale-95">
+                    <img src="" alt="">
+                    Default
+                </button> -->
+            </div>
+
+            <div class="flex justify-between items-center my-10">
+                <h4 class="text-2xl font-bold">Best Deal For you</h4>
+                <!-- sort button  -->
+                <button id="sort-price-btn" class="btn sm:btn-md font-bold text-lg text-white 
+                bg-primary hover:bg-[#156469] px-6">Sort by Price</button>
+            </div>
+
+            <!-- all pets showing here  -->
+            <div class=" py-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-4">
+
+                <!-- 3 col -->
+                <div id="pet-container"
+                    class="relative min-h-96 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 col-span-2 lg:col-span-3 auto-rows-min gap-4">
+                    <!-- Product Cards -->
+                    <!-- <div></div> -->
+                    <div class="absolute w-full min-h-96 flex justify-center items-center col-span-3">
+                        <span id="load-spinner" class="loading loading-bars loading-lg hidden"></span>
+                    </div>
+
+                </div>
+
+                <!-- 1 col  -->
+                <div id="like-pet-container"
+                    class="rounded-xl border grid grid-cols-2 gap-4 auto-rows-min p-4 max-md:mt-4">
+                    <!-- <div> like image </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- details modal  -->
+        <dialog id="details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box flex flex-col items-center">
+                <div id="modal-content">
+                    <!-- details content -->
+
+                </div>
+                <div class="modal-action grid grid-cols-1 w-full">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button
+                            class="btn border border-[#0e79815d] hover:border-[#0e79815d] bg-[#0e798110] hover:bg-[#0e79812c] text-xl text-primary font-bold w-full">
+                            Close
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- adoption modal -->
+        <dialog id="adoption_modal" class="modal modal-middle">
+            <div class="modal-box flex flex-col items-center">
+                <img src="./assets/handshake-icon.png" alt="">
+                <h3 class="text-4xl font-bold">Congrats!</h3>
+                <p class="text-xl py-4">Adoption Process is start for your pet</p>
+                <p id="time-count" class="text-7xl"></p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button id="adopt_close" class="btn hidden">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+
+    <footer class=" bg-black text-neutral-content py-20 px-10">
+        <div class="container mx-auto footer">
+            <nav class="">
+                <h6 class=" text-white text-4xl font-bold flex gap-2 mb-3">
+                    <img class="w-12" src="./assets/logo.png" alt="">
+                    Peddy
+                </h6>
+                <p>Location: av. Washington 165, NY CA 54003</p>
+                <p>Phone: +31 85 964 47 25</p>
+                <p>Email: info@yourdomain.com</p>
+                <p>Openings hours: 9.00 AM - 5.00 PM</p>
+                <div class="flex gap-1">
+                    <button class="w-10"><img src="./assets/social/fb-icon.png" alt=""></button>
+                    <button class="w-10"><img src="./assets/social//twitterx-icon.png" alt=""></button>
+                    <button class="w-10"><img src="./assets/social/youtube-icon.png" alt=""></button>
+                    <button class="w-10"><img src="./assets/social/instagram-icon.png" alt=""></button>
+                </div>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-xl text-white font-bold normal-case mb-3">Useful Links</h6>
+                <a class="link link-hover">Home</a>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Animals</a>
+                <a class="link link-hover">Foundation</a>
+                <a class="link link-hover">Contact</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-xl text-white font-bold normal-case mb-3">Drop a Message</h6>
+                <input type="text" placeholder="Enter your email" class="input w-full bg-[#ffffff23] " />
+                <button class="btn sm:btn-md max-sm:w-full font-bold text-base text-white w-full
+                        bg-primary hover:bg-[#156469] border-none px-6">Subscribe</button>
+            </nav>
+
+        </div>
+    </footer>
+
+
+
+    <script src="./js/category.js"></script>
+    <script src="./js/pet.js"></script>
+    <script src="./js/feature.js"></script>
+</body>
+
+</html>
